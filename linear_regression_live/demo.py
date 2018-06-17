@@ -18,7 +18,7 @@ def step_gradient(current_b, current_m, points, learning_rate):
         x = points[i, 0]
         y = points[i, 1]
         b_gradient += -(2/N) * (y - (current_m * x + current_b))
-        m_gradient += -(2*N) * x * (y-(current_m * x + current_b))
+        m_gradient += -(2/N) * x * (y-(current_m * x + current_b))
     new_b = current_b - (learning_rate * b_gradient)
     new_m = current_m - (learning_rate * m_gradient)
     return [new_b, new_m]
@@ -32,7 +32,7 @@ def gradient_descent_runner(points, initial_b, initial_m, learning_rate, num_ite
     return [b, m]
 
 def run():
-    points = genfromtext('data.csv',delimiter=',')
+    points = genfromtxt('data.csv',delimiter=',')
     #hyperparameters
     learning_rate = 0.0001
     #y = mx + b initial line
@@ -40,11 +40,9 @@ def run():
     initial_m = 0
     num_iterations = 1000
     [b, m] = gradient_descent_runner(points, initial_b, initial_m, learning_rate, num_iterations)
-    print(b)
-    print(m)
+    print("optimal b: " + str(b))
+    print("optimal m: " + str(m))
+    print(compute_error(b, m, points))
 
-
-
-if __name__ = '__main__':
+if __name__ == '__main__':
     run()
-
