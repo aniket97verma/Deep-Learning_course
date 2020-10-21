@@ -5,6 +5,16 @@ This is the code for the "Make a Neural Network" - Intro to Deep Learning #2 by 
 
 This is the code for [this](https://youtu.be/p69khggr1Jo) video by Siraj Raval on Youtube. This is a [simple](http://computing.dcu.ie/~humphrys/Notes/Neural/single.neural.html) single layer feedforward neural network (perceptron). We use binary digits as our inputs and expect binary digits as our outputs. We'll use [backpropagation](http://neuralnetworksanddeeplearning.com/chap2.html) via gradient descent to train our network and make our prediction as accurate as possible.
 
+##Steps to create neural network
+a. import the data.
+b. create model based on the data.
+c. choose the activation function.
+d. split the data into two parts: 1.training dataset  2.validation dataset
+e. start the training and plot the relevant curves(cost v/s iteration)
+f. import your testing dataset.
+g. predict the result by applying the trained model on the testing data.
+h. print the result and the testing accuracy.
+
 ##Dependencies
 
 None! Just numpy.
